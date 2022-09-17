@@ -43,8 +43,8 @@ const Hero = () => {
           <Link href="#experience">
             <button className="heroButton">Experience</button>
           </Link>
-          <Link href="#skills">
-            <button className="heroButton">Skills</button>
+          <Link href="#experience">
+            <button className="heroButton"></button>
           </Link>
         </div>
       </div>
