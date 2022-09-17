@@ -2,8 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
 import About from "../views/About";
+import Contact from "../views/Contact";
 import Experience from "../views/Experience";
 import Hero from "../views/Hero";
+import Skills from "../views/Skills";
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +24,12 @@ const Home: NextPage = () => {
       </section>
       <section id="experience" className="snap-center">
         <Experience />
+      </section>
+      <section id="skills" className="snap-center">
+        <Skills />
+      </section>
+      <section id="contact-me" className="snap-center">
+        <Contact />
       </section>
     </div>
   );
