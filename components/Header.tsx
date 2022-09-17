@@ -1,6 +1,7 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -54,16 +55,15 @@ const Header = () => {
         }}
         className="flex flex-row items-center text-gray-300"
       >
-        <SocialIcon
-          className="cursor-pointer"
-          network="email"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        <Link href="#contact">
+          <div className="cursor-pointer">
+            <SocialIcon network="email" fgColor="gray" bgColor="transparent" />
 
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Get in touch
-        </p>
+            <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+              Get in touch
+            </p>
+          </div>
+        </Link>
       </motion.div>
     </header>
   );
