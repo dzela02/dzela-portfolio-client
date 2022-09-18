@@ -1,19 +1,39 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 
 import Link from "next/link";
 import Image from "next/image";
 
 import Logo from "../assets/MarkoProfilna.jpeg";
 
+import { Experience, PageInfo, Skill, Social } from "../@types/typing";
+
 import Head from "next/head";
 import Header from "../components/Header";
 import About from "../views/About";
 import Contact from "../views/Contact";
-import Experience from "../views/Experience";
+import WorkExperience from "../views/Experience";
 import Hero from "../views/Hero";
 import Skills from "../views/Skills";
+import {
+  fetchExperiences,
+  fetchPageInfo,
+  fetchSkills,
+  fetchSocials,
+} from "../utils/api";
 
-const Home: NextPage = () => {
+interface HomeProps {
+  pageInfo: PageInfo;
+  experiences: Experience[];
+  skills: Skill[];
+  socials: Social[];
+}
+
+const Home: NextPage<HomeProps> = ({
+  pageInfo,
+  experiences,
+  skills,
+  socials,
+}) => {
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scroll-smooth scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#3f51b5]/80">
       <Head>
@@ -21,7 +41,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Frontend developer" />
       </Head>
 
-      <Header />
+      <Header socials={socials} />
       <section id="hero" className="snap-start">
         <Hero />
       </section>
@@ -29,7 +49,7 @@ const Home: NextPage = () => {
         <About />
       </section>
       <section id="experience" className="snap-center">
-        <Experience />
+        <WorkExperience />
       </section>
       <section id="skills" className="snap-center">
         <Skills />
@@ -56,3 +76,21 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const pageInfo = await fetchPageInfo();
+  const experiences = await fetchExperiences();
+  const skills = await fetchSkills();
+  const socials = await fetchSocials();
+
+  return {
+    props: {
+      pageInfo,
+      experiences,
+      skills,
+      socials,
+    },
+
+    revalidate: 25000,
+  };
+};
