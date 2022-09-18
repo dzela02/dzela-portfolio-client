@@ -50,3 +50,10 @@ export interface Social extends SanityBody {
   title: string;
   url: string;
 }
+
+export interface HomeProps {
+  pageInfo: PageInfo;
+  experiences: Experience[];
+  skills: Skill[];
+  socials: Social[];
+}

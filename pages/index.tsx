@@ -1,8 +1,8 @@
 import type { GetStaticProps, NextPage } from "next";
 
-import { Experience, PageInfo, Skill, Social } from "../@types/typing";
-
 import Head from "next/head";
+
+import { HomeProps } from "../@types/typing";
 
 import Header from "../sticky-elements/Header";
 import Footer from "../sticky-elements/Footer";
@@ -10,13 +10,6 @@ import Section from "../components/sections/Section";
 
 import fetchServerSideProps from "../utils/api";
 import generateConfigWithProps from "../components/sections/config";
-
-interface HomeProps {
-  pageInfo: PageInfo;
-  experiences: Experience[];
-  skills: Skill[];
-  socials: Social[];
-}
 
 const Home: NextPage<HomeProps> = (props) => {
   const { socials, pageInfo } = props;

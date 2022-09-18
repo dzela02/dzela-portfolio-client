@@ -1,4 +1,5 @@
-import { HomeProps } from "../../pages";
+import { HomeProps } from "../../@types/typing";
+
 import About from "../../views/About";
 import Contact from "../../views/contact/Contact";
 import Experience from "../../views/experience/Experience";
