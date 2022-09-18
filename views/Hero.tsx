@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, ReactElement } from "react";
 
 import BackgroundCircles from "../components/BackgroundCircles";
 import Image from "next/image";
@@ -7,10 +7,20 @@ import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 import ProfilePicture from "../assets/MarkoProfilna.jpeg";
+import { PageInfo } from "../@types/typing";
 
-const Hero = () => {
-  const [text, count] = useTypewriter({
-    words: ["Developer", "Engineer", "Coffee Lover"],
+interface HeroProps {
+  pageInfo: PageInfo;
+}
+
+const Hero: FC<HeroProps> = ({ pageInfo }): ReactElement => {
+  const [text] = useTypewriter({
+    words: [
+      `Hello I'am ${pageInfo.name}`,
+      "Developer",
+      "Engineer",
+      "Coffee Lover",
+    ],
     loop: true,
     delaySpeed: 2000,
   });
@@ -30,7 +40,7 @@ const Hero = () => {
 
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          Software Engineer
+          {pageInfo.role}
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span> <Cursor cursorColor="#3f51b5" />

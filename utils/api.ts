@@ -38,3 +38,12 @@ export const fetchExperiences = async (): Promise<Experience[]> => {
 
   return experiences;
 };
+
+export const fetchServerSideProps = async () => {
+  return await Promise.all([
+    fetchPageInfo(),
+    fetchExperiences(),
+    fetchSkills(),
+    fetchSocials(),
+  ]);
+};
