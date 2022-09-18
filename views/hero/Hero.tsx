@@ -14,7 +14,7 @@ interface HeroProps {
 }
 
 const Hero: FC<HeroProps> = ({ pageInfo }): ReactElement => {
-  const [text] = useTypewriter({
+  const { text } = useTypewriter({
     words: pageInfo.writtenText,
     loop: true,
     delaySpeed: 2000,
@@ -38,7 +38,7 @@ const Hero: FC<HeroProps> = ({ pageInfo }): ReactElement => {
           {pageInfo.role}
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
-          <span className="mr-2">{text}</span> <Cursor cursorColor="#3f51b5" />
+          <span className="mr-2">{text}</span> <Cursor cursorStyle="#3f51b5" />
         </h1>
 
         <HeroButtons />

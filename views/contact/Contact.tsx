@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 
 import {
   PhoneIcon,
@@ -18,7 +18,7 @@ interface ContactProps {
 }
 
 const Contact: FC<ContactProps> = ({ pageInfo }) => {
-  const [showContact, setShowContact] = useState(true);
+  const [showContact, setShowContact] = React.useState(true);
 
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
