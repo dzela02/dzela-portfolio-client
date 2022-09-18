@@ -11,7 +11,7 @@ import Section from "../components/sections/Section";
 import fetchServerSideProps from "../utils/api";
 import generateConfigWithProps from "../components/sections/config";
 
-export interface HomeProps {
+interface HomeProps {
   pageInfo: PageInfo;
   experiences: Experience[];
   skills: Skill[];
