@@ -4,7 +4,7 @@ interface SectionProps {
   id: string;
   start?: boolean;
   Component: FC;
-  props?: any;
+  props: any;
 }
 
 const Section: FC<SectionProps> = ({ id, Component, props, start = false }) => {
