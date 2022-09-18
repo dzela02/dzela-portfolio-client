@@ -8,6 +8,8 @@ interface SkillsProps {
 }
 
 const Skills: FC<SkillsProps> = ({ skills }) => {
+  const skillHalf = Math.floor(skills.length / 2);
+
   return (
     <div className="flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center overflow-hidden">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
@@ -18,9 +20,13 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
         Hover over a skill for current proficiency
       </h3>
 
-      <div className="grid grid-cols-4 gap-3">
-        {skills.map((skill) => (
-          <SkillButton skill={skill} key={skill._id} />
+      <div className="grid grid-cols-4 gap-2">
+        {skills.map((skill, index) => (
+          <SkillButton
+            skill={skill}
+            key={skill._id}
+            directionLeft={index <= skillHalf}
+          />
         ))}
       </div>
     </div>

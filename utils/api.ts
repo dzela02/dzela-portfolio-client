@@ -39,7 +39,7 @@ export const fetchExperiences = async (): Promise<Experience[]> => {
   return experiences;
 };
 
-export const fetchServerSideProps = async () => {
+const fetchServerSideProps = async () => {
   return await Promise.all([
     fetchPageInfo(),
     fetchExperiences(),
@@ -47,3 +47,5 @@ export const fetchServerSideProps = async () => {
     fetchSocials(),
   ]);
 };
+
+export default fetchServerSideProps;
