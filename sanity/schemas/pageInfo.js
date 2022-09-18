@@ -46,5 +46,16 @@ export default {
       type: "array",
       of: [{ type: "string" }],
     },
+    {
+      name: "email",
+      title: "Email",
+      type: "string",
+    },
+    {
+      name: "phone",
+      title: "Phone",
+      type: "string",
+    },
+    { name: "location", title: "Location", type: "string" },
   ],
 };

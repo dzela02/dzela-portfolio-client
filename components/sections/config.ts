@@ -32,14 +32,12 @@ const SECTION_CONFIG = [
 
 const generateConfigWithProps = (props: HomeProps) => {
   return SECTION_CONFIG.map((config) => {
-    if (config.id === "hero" || config.id === "about") {
-      return { ...config, props: { pageInfo: props.pageInfo } };
-    } else if (config.id === "experience") {
+    if (config.id === "experience") {
       return { ...config, props: { experiences: props.experiences } };
     } else if (config.id === "skills") {
       return { ...config, props: { skills: props.skills } };
     } else {
-      return config;
+      return { ...config, props: { pageInfo: props.pageInfo } };
     }
   });
 };

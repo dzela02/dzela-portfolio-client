@@ -18,10 +18,11 @@ export interface PageInfo extends SanityBody {
   address: string;
   backgroundInformation: string;
   email: string;
+  phone: string;
+  location: string;
   role: string;
   heroImage: Image;
   name: string;
-  phoneNumber: string;
   profilePic: Image;
   writtenText: string[];
 }
