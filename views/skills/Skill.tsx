@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
 import { motion } from "framer-motion";
-import { Skill } from "../@types/typing";
-import { urlFor } from "../sanity";
+import { Skill } from "../../@types/typing";
+import { urlFor } from "../../sanity";
 
 interface SkillProps {
   skill: Skill;

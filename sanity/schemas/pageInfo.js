@@ -40,5 +40,11 @@ export default {
       type: "array",
       of: [{ type: "reference", to: { type: "social" } }],
     },
+    {
+      name: "writtenText",
+      title: "Written Text",
+      type: "array",
+      of: [{ type: "string" }],
+    },
   ],
 };

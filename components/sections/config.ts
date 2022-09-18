@@ -1,9 +1,9 @@
 import { HomeProps } from "../../pages";
 import About from "../../views/About";
 import Contact from "../../views/Contact";
-import Experience from "../../views/Experience";
-import Hero from "../../views/Hero";
-import Skills from "../../views/Skills";
+import Experience from "../../views/experience/Experience";
+import Hero from "../../views/hero/Hero";
+import Skills from "../../views/skills/Skills";
 
 const SECTION_CONFIG = [
   {

@@ -3,6 +3,8 @@ import React, { FC, ReactElement } from "react";
 import { motion } from "framer-motion";
 import { PageInfo } from "../@types/typing";
 import { urlFor } from "../sanity";
+import ViewHeading from "../components/ViewHeading";
+import UnderlinedText from "../components/UnderlinedText";
 
 interface AboutProps {
   pageInfo: PageInfo;
@@ -18,9 +20,7 @@ const About: FC<AboutProps> = ({ pageInfo }): ReactElement => {
       transition={{ duration: 1.5 }}
       className="flex flex-col relative h-screen text-center md:text-left md:flex-row justify-evenly mx-auto items-center max-w-7xl px-10  "
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
-        About
-      </h3>
+      <ViewHeading text="about" />
 
       <motion.img
         initial={{ x: -200 }}
@@ -35,9 +35,7 @@ const About: FC<AboutProps> = ({ pageInfo }): ReactElement => {
 
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
-          Here is a{" "}
-          <span className="underline decoration-[#3f51b5]">little</span>{" "}
-          background
+          Here is a <UnderlinedText text="little" /> background
         </h4>
         <p className="text-base">{pageInfo.backgroundInformation}</p>
       </div>

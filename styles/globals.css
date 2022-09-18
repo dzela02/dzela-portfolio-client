@@ -14,4 +14,8 @@
   .main-container {
     @apply bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scroll-smooth scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#3f51b5]/80;
   }
+
+  .view-heading {
+    @apply absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl;
+  }
 }
