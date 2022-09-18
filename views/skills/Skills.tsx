@@ -19,12 +19,12 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
         Hover over a skill for current proficiency
       </h3>
 
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-4 gap-2 xl:pt-12">
         {skills.map((skill, index) => (
           <SkillButton
             skill={skill}
             key={skill._id}
-            directionLeft={index <= skillHalf}
+            directionLeft={index + 1 <= skillHalf}
           />
         ))}
       </div>

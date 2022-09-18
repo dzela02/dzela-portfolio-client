@@ -1,6 +1,6 @@
 import { HomeProps } from "../../pages";
 import About from "../../views/About";
-import Contact from "../../views/Contact";
+import Contact from "../../views/contact/Contact";
 import Experience from "../../views/experience/Experience";
 import Hero from "../../views/hero/Hero";
 import Skills from "../../views/skills/Skills";

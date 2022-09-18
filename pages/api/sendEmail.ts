@@ -3,19 +3,22 @@ import sgMail from "@sendgrid/mail";
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
-interface Data {}
+interface Data {
+  message: string;
+  error?: any;
+}
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { email, subject, message, name } = req.body;
+  const { subject, message, name, email } = req.body;
   const msg = {
     to: "dzelanovi@gmail.com",
-    from: email,
+    from: "marko@markodzelatovic.me",
     subject,
     name,
-    text: message,
+    text: `Message: ${message} Sender Email: ${email} Sender name: ${name}`,
   };
 
   try {

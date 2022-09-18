@@ -53,7 +53,7 @@ const ExperienceCard: FC<Props> = ({ experience }) => {
 
         <p className=" py-5 text-gray-300 ">{dateRange}</p>
 
-        <ul className="list-disc space-y-4 ml-5 text-lg">
+        <ul className="list-disc space-y-4 ml-5 text-lg h-60 scrollbar-thin  transition duration-300 ease-in-out hover:scrollbar-thumb-[#3f51b5]/50">
           {points.map((point) => (
             <li key={point}>{point}</li>
           ))}

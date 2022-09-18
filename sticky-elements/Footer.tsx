@@ -14,7 +14,7 @@ const Footer: FC<FooterProps> = ({ image }): ReactElement => {
 
   return (
     <Link href="#hero">
-      <footer className="sticky bottom-5 w-full cursor-pointer">
+      <footer className="sticky bottom-5 w-full cursor-pointer flex items-center justify-center flex-col">
         <div className="flex items-center justify-center">
           <NextImage
             src={imageSource}
@@ -24,6 +24,9 @@ const Footer: FC<FooterProps> = ({ image }): ReactElement => {
             alt=""
           />
         </div>
+        <p className="text-sm font-mono pt-2 text-gray-500/70 hover:text-xl transition-text duration-300 ease-in-out">
+          &copy; Marko Dzelatovic 2022
+        </p>
       </footer>
     </Link>
   );
