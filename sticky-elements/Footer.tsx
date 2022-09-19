@@ -14,7 +14,7 @@ const Footer: FC<FooterProps> = ({ image }): ReactElement => {
 
   return (
     <Link href="#hero">
-      <footer className="sticky bottom-5 w-full cursor-pointer flex items-center justify-center flex-col">
+      <footer className="hidden sticky bottom-5 w-full cursor-pointer md:flex items-center justify-center flex-col">
         <div className="flex items-center justify-center">
           <NextImage
             src={imageSource}
