@@ -35,7 +35,7 @@ const ContactForm: FC<Props> = ({ setSubmittedState }) => {
       className="flex flex-col space-y-2 w-fit mx-auto"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="flex space-x-2">
+      <div className="flex space-y-2 justify-center flex-col md:flex-row md:space-x-2 md:space-y-0">
         <input
           {...register("name")}
           className="contact-input"
@@ -63,7 +63,7 @@ const ContactForm: FC<Props> = ({ setSubmittedState }) => {
         placeholder="Message..."
       />
       <button
-        className="bg-[#3f51b5] py-5 px-10 rounded-md text-white font-bold text-lg"
+        className="bg-[#3f51b5] py-2 md:py-5 px-10  rounded-md text-white font-bold text-lg"
         type="submit"
       >
         Submit

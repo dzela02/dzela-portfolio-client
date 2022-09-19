@@ -15,7 +15,7 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
     <div className="flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center overflow-hidden">
       <ViewHeading text="skills" />
 
-      <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">
+      <h3 className="hidden md:inline-block absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">
         Hover over a skill for current proficiency
       </h3>
 
@@ -28,6 +28,10 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
           />
         ))}
       </div>
+
+      <h3 className="md:hidden absolute bottom-12 uppercase tracking-[3px] text-gray-500 text-sm">
+        Click on a skill for current proficiency
+      </h3>
     </div>
   );
 };
