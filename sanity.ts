@@ -5,7 +5,7 @@ export const config = {
   dataset: "production",
   projectId: "gyon2qqp",
   apiVersion: "2021-03-25",
-  useCdn: process.env.NODE_ENV === "production",
+  useCdn: true,
 };
 
 export const sanityClient = createClient(config);

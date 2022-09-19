@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 
 import {
   PhoneIcon,
@@ -11,8 +11,13 @@ import UnderlinedText from "../../components/UnderlinedText";
 import ContactForm from "./ContactForm";
 
 import { motion } from "framer-motion";
+import { PageInfo } from "../../@types/typing";
 
-const Contact = () => {
+interface ContactProps {
+  pageInfo: PageInfo;
+}
+
+const Contact: FC<ContactProps> = ({ pageInfo }) => {
   const [showContact, setShowContact] = useState(true);
 
   return (
@@ -27,17 +32,17 @@ const Contact = () => {
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#3f51b5] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">+381605512776</p>
+            <p className="text-2xl">{pageInfo.phone}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#3f51b5] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">dzelanovi@gmail.com</p>
+            <p className="text-2xl">{pageInfo.email}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-[#3f51b5] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">Nis, Serbia</p>
+            <p className="text-2xl">{pageInfo.location}</p>
           </div>
         </div>
 

@@ -21,9 +21,10 @@ export interface PageInfo extends SanityBody {
   role: string;
   heroImage: Image;
   name: string;
-  phoneNumber: string;
   profilePic: Image;
   writtenText: string[];
+  location: string;
+  phone: string;
 }
 
 export interface Skill extends SanityBody {
