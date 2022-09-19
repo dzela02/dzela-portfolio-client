@@ -24,7 +24,7 @@ const ExperienceCard: FC<Props> = ({ experience }) => {
   const dateRange = generateDateRange(startDate, endDate);
 
   return (
-    <article className="flex flex-col h-[550px] md:h-auto rounded-l items-center space-y-7 flex-shrink-0 w-[350px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 overflow-hidden">
+    <article className="flex flex-col h-[550px] md:h-auto rounded-l items-center space-y-7 flex-shrink-0 w-[300px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 overflow-hidden">
       <motion.img
         initial={{
           y: -100,
