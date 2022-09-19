@@ -1,5 +1,5 @@
 import http from "../http-client/http";
-import { Experience, PageInfo, Skill, Social } from "../@types/typing";
+import { Experience, PageInfo, Skill, Social } from "../typing";
 
 type SupportedKey = "experiences" | "pageInfo" | "skills" | "socials";
 

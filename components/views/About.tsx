@@ -1,16 +1,16 @@
-import React, { FC, ReactElement } from "react";
+import React from "react";
 
 import { motion } from "framer-motion";
-import { PageInfo } from "../@types/typing";
-import { urlFor } from "../sanity";
-import ViewHeading from "../components/ViewHeading";
-import UnderlinedText from "../components/UnderlinedText";
+import { PageInfo } from "../../typing";
+import { urlFor } from "../../sanity";
+import ViewHeading from "../ViewHeading";
+import UnderlinedText from "../UnderlinedText";
 
 interface AboutProps {
   pageInfo: PageInfo;
 }
 
-const About: FC<AboutProps> = ({ pageInfo }): ReactElement => {
+const About = ({ pageInfo }: AboutProps) => {
   const url = urlFor(pageInfo.profilePic);
 
   return (

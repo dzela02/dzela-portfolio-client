@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React from "react";
 
 interface Props {
   text: string;
 }
 
-const ViewHeading: FC<Props> = ({ text }) => {
+const ViewHeading = ({ text }: Props) => {
   return <h3 className="view-heading">{text}</h3>;
 };
 

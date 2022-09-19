@@ -1,15 +1,15 @@
-import React, { FC } from "react";
+import React from "react";
 
 import { motion } from "framer-motion";
-import { Skill } from "../../@types/typing";
-import { urlFor } from "../../sanity";
+import { Skill } from "../../../typing";
+import { urlFor } from "../../../sanity";
 
 interface SkillProps {
   skill: Skill;
   directionLeft?: boolean;
 }
 
-const Skill: FC<SkillProps> = ({ directionLeft = false, skill }) => {
+const Skill = ({ directionLeft = false, skill }: SkillProps) => {
   return (
     <div className="group relative flex cursor-pointer ">
       <motion.img

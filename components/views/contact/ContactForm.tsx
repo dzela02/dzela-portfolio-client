@@ -1,6 +1,6 @@
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import http from "../../http-client/http";
+import http from "../../../http-client/http";
 
 interface Inputs {
   name: string;
@@ -13,7 +13,7 @@ interface Props {
   setSubmittedState: Dispatch<SetStateAction<boolean>>;
 }
 
-const ContactForm: FC<Props> = ({ setSubmittedState }) => {
+const ContactForm = ({ setSubmittedState }: Props) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async (formData) => {

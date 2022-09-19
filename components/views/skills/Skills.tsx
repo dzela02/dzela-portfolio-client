@@ -1,14 +1,14 @@
-import React, { FC } from "react";
-import { Skill } from "../../@types/typing";
+import React from "react";
+import { Skill } from "../../../typing";
 
 import SkillButton from "./Skill";
-import ViewHeading from "../../components/ViewHeading";
+import ViewHeading from "../../ViewHeading";
 
 interface SkillsProps {
   skills: Skill[];
 }
 
-const Skills: FC<SkillsProps> = ({ skills }) => {
+const Skills = ({ skills }: SkillsProps) => {
   const skillHalf = Math.floor(skills.length / 2);
 
   return (

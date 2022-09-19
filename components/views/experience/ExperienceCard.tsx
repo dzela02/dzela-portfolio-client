@@ -1,15 +1,15 @@
-import React, { FC } from "react";
+import React from "react";
 
 import { motion } from "framer-motion";
-import { Experience } from "../../@types/typing";
-import { urlFor } from "../../sanity";
-import { generateDateRange } from "../../utils/dates";
+import { Experience } from "../../../typing";
+import { urlFor } from "../../../sanity";
+import { generateDateRange } from "../../../utils/dates";
 
 interface Props {
   experience: Experience;
 }
 
-const ExperienceCard: FC<Props> = ({ experience }) => {
+const ExperienceCard = ({ experience }: Props) => {
   const {
     companyImage,
     technologies,

@@ -1,15 +1,15 @@
-import React, { FC, ReactElement } from "react";
+import React from "react";
 
 import NextImage from "next/image";
 import Link from "next/link";
-import { Image } from "../@types/typing";
-import { urlFor } from "../sanity";
+import { Image } from "../../typing";
+import { urlFor } from "../../sanity";
 
 interface FooterProps {
   image: Image;
 }
 
-const Footer: FC<FooterProps> = ({ image }): ReactElement => {
+const Footer = ({ image }: FooterProps) => {
   const imageSource = urlFor(image);
 
   return (

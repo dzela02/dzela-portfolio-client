@@ -1,14 +1,14 @@
-import React, { FC, ReactElement } from "react";
+import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Social } from "../@types/typing";
+import { Social } from "../../typing";
 
 interface HeaderProps {
   socials: Social[];
 }
 
-const Header: FC<HeaderProps> = ({ socials }): ReactElement => {
+const Header = ({ socials }: HeaderProps) => {
   return (
     <header className="sticky top-0 flex items-start justify-between max-w-7xl mx-auto z-20 p-5">
       <motion.div

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 
 import {
   PhoneIcon,
@@ -6,18 +6,18 @@ import {
   EnvelopeIcon,
   CheckCircleIcon,
 } from "@heroicons/react/24/solid";
-import ViewHeading from "../../components/ViewHeading";
-import UnderlinedText from "../../components/UnderlinedText";
 import ContactForm from "./ContactForm";
 
 import { motion } from "framer-motion";
-import { PageInfo } from "../../@types/typing";
+import ViewHeading from "../../ViewHeading";
+import UnderlinedText from "../../UnderlinedText";
+import { PageInfo } from "../../../typing";
 
 interface ContactProps {
   pageInfo: PageInfo;
 }
 
-const Contact: FC<ContactProps> = ({ pageInfo }) => {
+const Contact = ({ pageInfo }: ContactProps) => {
   const [showContact, setShowContact] = React.useState(true);
 
   return (

@@ -1,19 +1,19 @@
-import React, { FC, ReactElement } from "react";
+import React from "react";
 
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
-import { PageInfo } from "../../@types/typing";
-import { urlFor } from "../../sanity";
+import { PageInfo } from "../../../typing";
+import { urlFor } from "../../../sanity";
 import HeroButtons from "./HeroButtons";
 
 interface HeroProps {
   pageInfo: PageInfo;
 }
 
-const Hero: FC<HeroProps> = ({ pageInfo }): ReactElement => {
+const Hero = ({ pageInfo }: HeroProps) => {
   const { text } = useTypewriter({
     words: pageInfo.writtenText,
     loop: true,

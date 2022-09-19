@@ -1,17 +1,17 @@
-import React, { FC, ReactElement } from "react";
+import React from "react";
 
-import { Experience } from "../../@types/typing";
+import { Experience } from "../../../typing";
 
 import { motion } from "framer-motion";
 
 import ExperienceCard from "./ExperienceCard";
-import ViewHeading from "../../components/ViewHeading";
+import ViewHeading from "../../ViewHeading";
 
 interface ExperienceProps {
   experiences: Experience[];
 }
 
-const Experience: FC<ExperienceProps> = ({ experiences }): ReactElement => {
+const Experience = ({ experiences }: ExperienceProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
