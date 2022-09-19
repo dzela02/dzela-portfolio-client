@@ -53,5 +53,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
       skills,
       socials,
     },
+
+    revalidate: 600,
   };
 };
