@@ -1,5 +1,8 @@
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+
+import { ArrowPathIcon } from "@heroicons/react/24/solid";
+
 import http from "../../http-client/http";
 
 interface Inputs {
@@ -16,7 +19,10 @@ interface Props {
 const ContactForm: FC<Props> = ({ setSubmittedState }) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
+  const [submitting, setSubmitting] = useState(false);
+
   const onSubmit: SubmitHandler<Inputs> = async (formData) => {
+    setSubmitting(true);
     const { status: ResponseStatus } = await http.post(
       "/api/sendEmail",
       JSON.stringify(formData)
@@ -63,10 +69,15 @@ const ContactForm: FC<Props> = ({ setSubmittedState }) => {
         placeholder="Message..."
       />
       <button
-        className="bg-[#3f51b5] py-2 md:py-5 px-10  rounded-md text-white font-bold text-lg"
+        className="flex items-center justify-center bg-[#3f51b5] py-2 md:py-5 px-10 disabled:bg-[#3f51b5]/20  rounded-md text-white font-bold text-lg transition-all duration-300 ease-in"
         type="submit"
+        disabled={submitting}
       >
-        Submit
+        {!submitting ? (
+          "Submit"
+        ) : (
+          <ArrowPathIcon className="h-7 w-7 animate-spin" />
+        )}
       </button>
     </form>
   );

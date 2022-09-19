@@ -16,6 +16,6 @@
   }
 
   .view-heading {
-    @apply hidden md:inline top-24 absolute uppercase tracking-[20px] text-gray-500 text-2xl;
+    @apply hidden md:inline top-24 absolute uppercase tracking-[20px] text-gray-500 text-base md:text-2xl;
   }
 }
